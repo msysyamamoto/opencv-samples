@@ -2,7 +2,7 @@
 import cv2
 
 cap = cv2.VideoCapture(0)
-cascade_path = "./haarcascade_frontalface_default.xml"
+cascade_path = "../opencv/data/haarcascades/haarcascade_frontalface_default.xml"
 cascade = cv2.CascadeClassifier(cascade_path)
 
 color = (0, 255, 0)
