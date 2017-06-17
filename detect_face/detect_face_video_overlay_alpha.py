@@ -28,5 +28,9 @@ while True:
         frame[y:y+h, x:x+w] *= rmask
         frame[y:y+h, x:x+w] += oi
 
-    cv2.waitKey(1)
+    key = cv2.waitKey(1)
+    if key == ord("\r"):
+        cv2.imwrite("./camera.png", frame)
+        print("save picture.")
+
     cv2.imshow("face camera", frame)
