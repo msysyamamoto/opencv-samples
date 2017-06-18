@@ -6,7 +6,7 @@ cascade_path = "../opencv/data/haarcascades/haarcascade_frontalface_default.xml"
 cascade = cv2.CascadeClassifier(cascade_path)
 
 over_imgae_path = "./over.png"
-over_image = cv2.imread(over_imgae_path, cv2.IMREAD_UNCHANGED) 
+over_image = cv2.imread(over_imgae_path, cv2.IMREAD_UNCHANGED)
 
 mask = over_image[:,:,3]  # extract alpha channel
 mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
@@ -32,5 +32,6 @@ while True:
     if key == ord("\r"):
         cv2.imwrite("./camera.png", frame)
         print("save picture.")
+        frame[:] = 255 # flash effect
 
     cv2.imshow("face camera", frame)
